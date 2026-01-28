@@ -1,1069 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Durgesh | Personal Portfolio</title>
+  <meta charset="UTF-8">
+  <title>Rohan | Web Developer Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rohan – Web Developer Portfolio">
 
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Bootstrap Icons -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
-<!-- AOS Animation Library -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-<style>
-/* ================= GLOBAL ================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
-}
-
-/* ================= CUSTOM COLORS ================= */
-:root {
-    --primary-color: #f4623a;
-    --primary-dark: #d94f2d;
-    --dark-bg: #1a1a2e;
-    --light-bg: #f8f9fa;
-}
-
-/* ================= NAVBAR ================= */
-.navbar {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-    padding: 1rem 0;
-}
-
-.navbar.scrolled {
-    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-}
-
-.navbar-brand {
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: var(--primary-color) !important;
-    transition: transform 0.3s ease;
-}
-
-.navbar-brand:hover {
-    transform: scale(1.05);
-}
-
-.nav-link {
-    font-weight: 500;
-    margin: 0 0.5rem;
-    position: relative;
-    transition: color 0.3s ease;
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: var(--primary-color);
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-}
-
-.nav-link:hover::after {
-    width: 80%;
-}
-
-.nav-link:hover {
-    color: var(--primary-color) !important;
-}
-
-/* ================= HERO ================= */
-.masthead {
-    min-height: 100vh;
-    background: linear-gradient(135deg, rgba(26, 26, 46, 0.9), rgba(244, 98, 58, 0.8)),
-                url("https://images.unsplash.com/photo-1517694712202-14dd9538aa97");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: white;
-    position: relative;
-    overflow: hidden;
-}
-
-.masthead::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 20% 50%, rgba(244, 98, 58, 0.2) 0%, transparent 50%);
-    animation: pulse 8s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
-}
-
-.masthead h1 {
-    font-size: clamp(2rem, 5vw, 4rem);
-    font-weight: 700;
-    margin-bottom: 1rem;
-    animation: fadeInUp 1s ease;
-}
-
-.masthead h3 {
-    font-size: clamp(1.2rem, 3vw, 2rem);
-    font-weight: 300;
-    margin-bottom: 1rem;
-    animation: fadeInUp 1.2s ease;
-}
-
-.masthead p {
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    animation: fadeInUp 1.4s ease;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
+  <style>
+    * { font-family: 'Poppins', sans-serif; }
+    body {
+      background: linear-gradient(135deg, #063270, #0a0902);
+      color: #e5e7eb;
+      scroll-behavior: smooth;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+    /* Navbar */
+    .navbar { background: rgba(2, 6, 23, 0.85); backdrop-filter: blur(10px); }
+    .navbar-brand { font-weight: 700; color: #38bdf8 !important; }
+    .nav-link { color: #e5e7eb !important; margin-left: 10px; }
+    .nav-link:hover { color: #38bdf8 !important; }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #1be88c, #bf1fdc 60%);
     }
-}
 
-.divider {
-    height: 4px;
-    width: 80px;
-    background: var(--primary-color);
-    margin: 20px auto;
-    border-radius: 2px;
-    position: relative;
-}
+    .hero h1 span { color: #020617; background: #38bdf8; padding: 0 12px; border-radius: 8px; position: relative; z-index: 2; }
+    .btn-main { background: #38bdf8; border: none; color: #020617; font-weight: 600; border-radius: 30px; position: relative; z-index: 2; }
+    .btn-main:hover { background: #0ea5e9; color: #fff; transform: scale(1.05); }
 
-.divider::after {
-    content: '';
-    position: absolute;
-    height: 4px;
-    width: 40px;
-    background: var(--primary-color);
-    left: -50px;
-    opacity: 0.5;
-}
+    section { padding: 90px 0; }
+    .section-title h2 { font-weight: 700; color: #38bdf8; text-align: center; margin-bottom: 50px; }
 
-.divider::before {
-    content: '';
-    position: absolute;
-    height: 4px;
-    width: 40px;
-    background: var(--primary-color);
-    right: -50px;
-    opacity: 0.5;
-}
-
-/* ================= BUTTON ================= */
-.btn-primary {
-    background: var(--primary-color);
-    border: none;
-    padding: 12px 35px;
-    font-weight: 600;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(244, 98, 58, 0.3);
-}
-
-.btn-primary:hover {
-    background: var(--primary-dark);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(244, 98, 58, 0.4);
-}
-
-.btn-outline-light {
-    border: 2px solid white;
-    color: white;
-    padding: 12px 35px;
-    font-weight: 600;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-}
-
-.btn-outline-light:hover {
-    background: white;
-    color: var(--primary-color);
-    transform: translateY(-3px);
-}
-
-/* ================= SECTIONS ================= */
-.page-section {
-    padding: 80px 0;
-}
-
-.section-title {
-    font-size: clamp(2rem, 4vw, 2.5rem);
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
-
-.bg-primary {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)) !important;
-    color: white;
-}
-
-/* ================= ABOUT ================= */
-#about p {
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.8;
-}
-
-/* ================= SKILLS ================= */
-.skill-card {
-    padding: 2rem 1.5rem;
-    border-radius: 15px;
-    transition: all 0.3s ease;
-    background: white;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    height: 100%;
-}
-
-.skill-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(244, 98, 58, 0.2);
-}
-
-.skill-card i {
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-    transition: all 0.3s ease;
-}
-
-.skill-card:hover i {
-    transform: scale(1.1) rotate(5deg);
-}
-
-.skill-card h5 {
-    font-weight: 600;
-    margin-bottom: 0.8rem;
-    color: var(--dark-bg);
-}
-
-.skill-card p {
-    color: #666;
-    margin-bottom: 0;
-}
-
-/* ================= PROJECT FILTER TABS ================= */
-.filter-tabs {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.filter-btn {
-    padding: 10px 25px;
-    border: 2px solid var(--primary-color);
-    background: white;
-    color: var(--primary-color);
-    border-radius: 50px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 0.9rem;
-}
-
-.filter-btn:hover, .filter-btn.active {
-    background: var(--primary-color);
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(244, 98, 58, 0.3);
-}
-
-/* ================= PROJECT CARDS ================= */
-.project-item {
-    transition: all 0.3s ease;
-}
-
-.project-item.hide {
-    display: none;
-}
-
-.project-card {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    transition: all 0.4s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(244, 98, 58, 0.2);
-}
-
-/* ================= PROJECT IMAGE ================= */
-.project-image {
-    position: relative;
-    overflow: hidden;
-    height: 250px;
-}
-
-.project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.project-card:hover .project-image img {
-    transform: scale(1.1);
-}
-
-/* ================= PROJECT OVERLAY ================= */
-.project-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(244, 98, 58, 0.95), rgba(217, 79, 45, 0.95));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.project-card:hover .project-overlay {
-    opacity: 1;
-}
-
-.project-links {
-    display: flex;
-    gap: 1rem;
-}
-
-.project-link {
-    width: 50px;
-    height: 50px;
-    background: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary-color);
-    font-size: 1.3rem;
-    transition: all 0.3s ease;
-    transform: translateY(20px);
-    opacity: 0;
-    text-decoration: none;
-}
-
-.project-card:hover .project-link {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.project-card:hover .project-link:nth-child(1) {
-    transition-delay: 0.1s;
-}
-
-.project-card:hover .project-link:nth-child(2) {
-    transition-delay: 0.2s;
-}
-
-.project-link:hover {
-    background: var(--primary-color);
-    color: white;
-    transform: scale(1.1) rotate(360deg);
-}
-
-/* ================= PROJECT CONTENT ================= */
-.project-content {
-    padding: 1.5rem;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.project-category {
-    color: var(--primary-color);
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 0.5rem;
-}
-
-.project-title {
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin-bottom: 0.8rem;
-    color: var(--dark-bg);
-    transition: color 0.3s ease;
-}
-
-.project-card:hover .project-title {
-    color: var(--primary-color);
-}
-
-.project-description {
-    color: #666;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    flex-grow: 1;
-}
-
-/* ================= TECH BADGES ================= */
-.project-tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.tech-badge {
-    padding: 5px 12px;
-    background: rgba(244, 98, 58, 0.1);
-    color: var(--primary-color);
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.tech-badge:hover {
-    background: var(--primary-color);
-    color: white;
-    transform: translateY(-2px);
-}
-
-/* ================= CONTACT ================= */
-#contact {
-    background: var(--dark-bg);
-    color: white;
-}
-
-.contact-info {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 1.1rem;
-    margin: 0.5rem 0;
-    transition: all 0.3s ease;
-}
-
-.contact-info:hover {
-    color: var(--primary-color);
-    transform: translateX(5px);
-}
-
-.contact-info i {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-}
-
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.social-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    font-size: 1.5rem;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.social-icon:hover {
-    background: var(--primary-color);
-    transform: translateY(-5px) rotate(360deg);
-    color: white;
-}
-
-/* ================= FOOTER ================= */
-footer {
-    background: var(--light-bg);
-    padding: 25px;
-    text-align: center;
-    color: #666;
-}
-
-/* ================= SCROLL TO TOP ================= */
-.scroll-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    background: var(--primary-color);
-    color: white;
-    border-radius: 50%;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 1000;
-    box-shadow: 0 5px 15px rgba(244, 98, 58, 0.4);
-}
-
-.scroll-to-top:hover {
-    background: var(--primary-dark);
-    transform: translateY(-5px);
-}
-
-.scroll-to-top.show {
-    display: flex;
-}
-
-/* ================= MOBILE RESPONSIVE ================= */
-@media (max-width: 768px) {
-    .masthead {
-        background-attachment: scroll;
-        padding: 2rem 1rem;
+    /* Cards */
+    .card {
+      background: rgba(4, 7, 1, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(9, 247, 9, 0.1);
+      border-radius: 20px;
+      transition: all 0.4s ease;
+      height: 100%;
     }
-    
-    .page-section {
-        padding: 60px 0;
-    }
-    
-    .navbar-nav {
-        text-align: center;
-        padding: 1rem 0;
-    }
-    
-    .nav-link {
-        margin: 0.5rem 0;
-    }
-    
-    .skill-card {
-        margin-bottom: 2rem;
-    }
-    
-    .contact-info {
-        font-size: 1rem;
-    }
-    
-    .filter-tabs {
-        gap: 0.5rem;
-    }
-    
-    .filter-btn {
-        padding: 8px 18px;
-        font-size: 0.85rem;
-    }
-    
-    .project-image {
-        height: 200px;
-    }
-    
-    .project-title {
-        font-size: 1.2rem;
-    }
-    
-    .project-description {
-        font-size: 0.9rem;
-    }
-    
-    .project-link {
-        width: 45px;
-        height: 45px;
-        font-size: 1.1rem;
-    }
-}
+    .card:hover { transform: translateY(-12px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
 
-@media (max-width: 576px) {
-    .btn-primary, .btn-outline-light {
-        padding: 10px 25px;
-        font-size: 0.9rem;
+    /* Skills */
+    .skill-box { text-align: center; padding: 35px; }
+    .skill-box i { font-size: 45px; color: #38bdf8; margin-bottom: 15px; }
+
+    /* Contact */
+    .contact-box {
+      background: rgba(255,255,255,0.05);
+      padding: 40px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
     }
-    
-    .social-icon {
-        width: 45px;
-        height: 45px;
-        font-size: 1.2rem;
+
+    footer {
+      background: #020617;
+      text-align: center;
+      padding: 20px;
+      color: #e4e8ee;
+      border-top: 1px solid rgba(255,255,255,0.1);
     }
-    
-    .project-content {
-        padding: 1.2rem;
+
+    /* Typing cursor */
+    #typing::after {
+      content: '|';
+      animation: blink 0.7s infinite;
+      margin-left: 2px;
     }
-    
-    .project-image {
-        height: 180px;
+    @keyframes blink { 0%,50%,100%{opacity:1;} 25%,75%{opacity:0;} }
+
+    /* hero */
+    #matrixCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
     }
-}
-</style>
+  </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg fixed-top">
-<div class="container">
-<a class="navbar-brand" href="#">Durgesh</a>
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="nav">
-<ul class="navbar-nav ms-auto">
-<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-<li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-<li class="nav-item"><a class="nav-link" href="#portfolio">Projects</a></li>
-<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-</ul>
-</div>
-</div>
+  <div class="container">
+    <a class="navbar-brand" href="#">Rohan</a>
+    <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
 </nav>
 
-<!-- HERO -->
-<section class="masthead">
-<div class="container">
-<h1>Hi, I'm Durgesh 👋</h1>
-<h3>Engineering Student & Web Developer</h3>
-<div class="divider"></div>
-<p class="mb-4">I build responsive websites, dashboards and real-world projects.</p>
-<a href="#portfolio" class="btn btn-primary btn-lg mt-3 me-3">View My Work</a>
-<a href="#contact" class="btn btn-outline-light btn-lg mt-3">Get In Touch</a>
-</div>
+<section class="hero text-center">
+  <canvas id="matrixCanvas"></canvas>
+  <div class="container" style="position: relative; z-index: 2;">
+    <h1 class="display-4 fw-bold mb-3">Hi, I'm <span>Rohan👋🙏</span></h1>
+    <p class="lead mb-4">I am a <span id="typing"></span></p>
+    <a href="portfolio.html" class="btn btn-main px-5 py-2">View My Work</a>
+  </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="page-section bg-primary text-center">
-<div class="container" data-aos="fade-up">
-<h2 class="section-title">About Me</h2>
-<div class="divider bg-light"></div>
-<p>
-I am a passionate engineering student interested in web development,
-dashboards, and sustainability-based projects. I love creating innovative
-solutions that make a difference and constantly learning new technologies
-to improve my craft.
-</p>
-</div>
+<section id="about">
+  <div class="container">
+    <div class="section-title"><h2>About Me</h2></div>
+    <p class="text-center col-md-8 mx-auto">
+      I am an engineering student and passionate web developer focused on creating modern,
+      responsive and user-friendly web applications with real-world impact.
+    </p>
+  </div>
 </section>
 
-<!-- SKILLS -->
-<section id="skills" class="page-section text-center">
-<div class="container">
-<h2 class="section-title" data-aos="fade-up">My Skills</h2>
-<div class="divider"></div>
-<div class="row mt-5">
-<div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-<div class="skill-card">
-<i class="bi bi-laptop"></i>
-<h5>Web Development</h5>
-<p>HTML, CSS, JS, Bootstrap</p>
-</div>
-</div>
-<div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-<div class="skill-card">
-<i class="bi bi-server"></i>
-<h5>Backend</h5>
-<p>Node.js, PHP, APIs</p>
-</div>
-</div>
-<div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
-<div class="skill-card">
-<i class="bi bi-bar-chart"></i>
-<h5>Data & Dashboards</h5>
-<p>Python, Streamlit</p>
-</div>
-</div>
-<div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
-<div class="skill-card">
-<i class="bi bi-lightbulb"></i>
-<h5>Projects</h5>
-<p>SDG, GLOBE Systems</p>
-</div>
-</div>
-</div>
-</div>
+<section id="skills">
+  <div class="container">
+    <div class="section-title"><h2>Skills</h2></div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card skill-box">
+          <i class="bi bi-code-slash"></i>
+          <h5>HTML & CSS</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card skill-box">
+          <i class="bi bi-bootstrap"></i>
+          <h5>Bootstrap</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card skill-box">
+          <i class="bi bi-braces"></i>
+          <h5>JavaScript</h5>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- PORTFOLIO -->
-<section id="portfolio" class="page-section" style="background: #f8f9fa;">
-<div class="container">
-<h2 class="section-title text-center" data-aos="fade-up">Featured Projects</h2>
-<div class="divider"></div>
-<p class="text-center text-muted mb-5" data-aos="fade-up" data-aos-delay="100">
-Explore my latest work in web development, dashboards, and sustainable solutions
-</p>
-
-<!-- Project Filter Tabs -->
-<div class="filter-tabs text-center mb-5" data-aos="fade-up" data-aos-delay="200">
-<button class="filter-btn active" data-filter="all">All Projects</button>
-<button class="filter-btn" data-filter="web">Web Apps</button>
-<button class="filter-btn" data-filter="dashboard">Dashboards</button>
-<button class="filter-btn" data-filter="system">Systems</button>
-</div>
-
-<!-- Projects Grid -->
-<div class="row g-4">
-<!-- Project 1: SDG Dashboard -->
-<div class="col-lg-4 col-md-6 project-item dashboard" data-aos="fade-up" data-aos-delay="100">
-<div class="project-card">
-<div class="project-image">
-<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600" alt="SDG Dashboard">
-<div class="project-overlay">
-<div class="project-links">
-<a href="#" class="project-link" title="Live Demo">
-<i class="bi bi-box-arrow-up-right"></i>
-</a>
-<a href="https://github.com/Durgesh-hyalij/SDG-Dashboard.git" class="project-link" title="View Code">
-<i class="bi bi-github"></i>
-</a>
-</div>
-</div>
-</div>
-<div class="project-content">
-<div class="project-category">Dashboard • Python</div>
-<h4 class="project-title">SDG Dashboard</h4>
-<p class="project-description">
-Interactive dashboard tracking Sustainable Development Goals with real-time data visualization and analytics using Streamlit and Python.
-</p>
-<div class="project-tech">
-<span class="tech-badge">Python</span>
-<span class="tech-badge">Streamlit</span>
-<span class="tech-badge">Pandas</span>
-</div>
-</div>
-</div>
-</div>
-
-<!-- Project 2: Weather Application -->
-<div class="col-lg-4 col-md-6 project-item web" data-aos="fade-up" data-aos-delay="200">
-<div class="project-card">
-<div class="project-image">
-<img src="https://images.unsplash.com/photo-1592210454359-9043f067919b?w=600" alt="Weather App">
-<div class="project-overlay">
-<div class="project-links">
-<a href="https://durgeshwhether.netlify.app/" class="project-link" title="Live Demo">
-<i class="bi bi-box-arrow-up-right"></i>
-</a>
-<a href="https://github.com/Durgesh-hyalij/snjb-tracker.git" class="project-link" title="View Code">
-<i class="bi bi-github"></i>
-</a>
-</div>
-</div>
-</div>
-<div class="project-content">
-<div class="project-category">Web App • JavaScript</div>
-<h4 class="project-title">Weather Forecaster</h4>
-<p class="project-description">
-Real-time weather application with 7-day forecast, location search, and interactive maps using OpenWeather API and modern UI design.
-</p>
-<div class="project-tech">
-<span class="tech-badge">JavaScript</span>
-<span class="tech-badge">API</span>
-<span class="tech-badge">Bootstrap</span>
-</div>
-</div>
-</div>
-</div>
-
-<!-- Project 3: College Management System -->
-<div class="col-lg-4 col-md-6 project-item system" data-aos="fade-up" data-aos-delay="300">
-<div class="project-card">
-<div class="project-image">
-<img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600" alt="College System">
-<div class="project-overlay">
-<div class="project-links">
-<a href="#" class="project-link" title="Live Demo">
-<i class="bi bi-box-arrow-up-right"></i>
-</a>
-<a href="#" class="project-link" title="View Code">
-<i class="bi bi-github"></i>
-</a>
-</div>
-</div>
-</div>
-<div class="project-content">
-<div class="project-category">System • Full Stack</div>
-<h4 class="project-title">College Management System</h4>
-<p class="project-description">
-Comprehensive platform for managing students, faculty, courses, and attendance with role-based access and automated reporting.
-</p>
-<div class="project-tech">
-<span class="tech-badge">PHP</span>
-<span class="tech-badge">MySQL</span>
-<span class="tech-badge">Bootstrap</span>
-</div>
-</div>
-</div>
-</div>
-
-<!-- Project 4: GLOBE Protocol System -->
-<div class="col-lg-4 col-md-6 project-item system web" data-aos="fade-up" data-aos-delay="100">
-<div class="project-card">
-<div class="project-image">
-<img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600" alt="GLOBE System">
-<div class="project-overlay">
-<div class="project-links">
-<a href="#" class="project-link" title="Live Demo">
-<i class="bi bi-box-arrow-up-right"></i>
-</a>
-<a href="#" class="project-link" title="View Code">
-<i class="bi bi-github"></i>
-</a>
-</div>
-</div>
-</div>
-<div class="project-content">
-<div class="project-category">System • Environmental</div>
-<h4 class="project-title">GLOBE Protocol Platform</h4>
-<p class="project-description">
-Environmental data collection system enabling students to contribute to global scientific research with data visualization tools.
-</p>
-<div class="project-tech">
-<span class="tech-badge">Node.js</span>
-<span class="tech-badge">MongoDB</span>
-<span class="tech-badge">React</span>
-</div>
-</div>
-</div>
-</div>
-
-<!-- Project 5: E-Commerce Platform -->
-<div class="col-lg-4 col-md-6 project-item web" data-aos="fade-up" data-aos-delay="200">
-<div class="project-card">
-<div class="project-image">
-<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600" alt="E-Commerce">
-<div class="project-overlay">
-<div class="project-links">
-<a href="#" class="project-link" title="Live Demo">
-<i class="bi bi-box-arrow-up-right"></i>
-</a>
-<a href="#" class="project-link" title="View Code">
-<i class="bi bi-github"></i>
-</a>
-</div>
-</div>
-</div>
-<div class="project-content">
-<div class="project-category">Web App • MERN Stack</div>
-<h4 class="project-title">E-Commerce Platform</h4>
-<p class="project-description">
-Full-featured online shopping platform with payment integration, cart management, and admin dashboard for inventory control.
-</p>
-<div class="project-tech">
-<span class="tech-badge">MERN</span>
-<span class="tech-badge">Stripe</span>
-<span class="tech-badge">Redux</span>
-</div>
-</div>
-</div>
-</div>
-
-<!-- Project 6: Data Analytics Dashboard -->
-<div class="col-lg-4 col-md-6 project-item dashboard" data-aos="fade-up" data-aos-delay="300">
-<div class="project-card">
-<div class="project-image">
-<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600" alt="Analytics Dashboard">
-<div class="project-overlay">
-<div class="project-links">
-<a href="#" class="project-link" title="Live Demo">
-<i class="bi bi-box-arrow-up-right"></i>
-</a>
-<a href="#" class="project-link" title="View Code">
-<i class="bi bi-github"></i>
-</a>
-</div>
-</div>
-</div>
-<div class="project-content">
-<div class="project-category">Dashboard • Data Science</div>
-<h4 class="project-title">Business Analytics Dashboard</h4>
-<p class="project-description">
-Interactive business intelligence dashboard with custom charts, KPI tracking, and export functionality for data-driven decisions.
-</p>
-<div class="project-tech">
-<span class="tech-badge">Python</span>
-<span class="tech-badge">Plotly</span>
-<span class="tech-badge">SQL</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<!-- View All Projects Button -->
-<div class="text-center mt-5" data-aos="fade-up">
-<a href="#" class="btn btn-primary btn-lg">
-View All Projects <i class="bi bi-arrow-right ms-2"></i>
-</a>
-</div>
-</div>
+<section id="projects">
+  <div class="container">
+    <div class="section-title"><h2>Projects</h2></div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card p-4">
+          <h5>Analysis of Lab Report</h5>
+          <p>Hospital lab report analysis in regional language.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-4">
+          <h5>Weather App</h5>
+          <p>Live weather application using API & JavaScript.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-4">
+          <h5>Student Management System</h5>
+          <p>CRUD based academic project.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="page-section text-center">
-<div class="container" data-aos="fade-up">
-<h2 class="section-title">Contact Me</h2>
-<div class="divider"></div>
-<p style="font-size: 1.2rem; margin-top: 1.5rem;">Let's build something together 🚀</p>
-<div class="mt-4">
-<div class="contact-info">
-<i class="bi bi-phone"></i>
-<span>+91 9309145640</span>
-</div>
-<br>
-<div class="contact-info">
-<i class="bi bi-envelope"></i>
-<span>durgeshcoder103@gmail.com</span>
-</div>
-</div>
-<div class="social-icons">
-<a href="https://github.com/Durgesh-hyalij" class="social-icon"><i class="bi bi-github"></i></a>
-<a href="https://www.linkedin.com/in/durgesh-hyalij-b97a772b6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-icon"><i class="bi bi-linkedin"></i></a>
-<a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
-<a href="https://www.instagram.com/durgesh.hyalij_patil/?igsh=MXc3dHJiZ2FxZ2JvcQ%3D%3D#" class="social-icon"><i class="bi bi-instagram"></i></a>
-</div>
-</div>
+<section id="contact">
+  <div class="container">
+    <div class="section-title"><h2>Contact Me</h2></div>
+    <div class="col-md-6 mx-auto">
+      <div class="contact-box text-center">
+        <p><i class="bi bi-envelope"></i> rohankandale1213@gmail.com</p>
+        <p><i class="bi bi-github"></i> GitHub</p>
+        <p><i class="bi bi-linkedin"></i> LinkedIn</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-<p>© 2026 Durgesh | Crafted with <span style="color: #f4623a;">♥</span> in India</p>
+  © 2026 Rohan Gopal Kandle | Designed & Built with ❤️
 </footer>
 
-<!-- SCROLL TO TOP -->
-<div class="scroll-to-top" id="scrollToTop">
-<i class="bi bi-arrow-up"></i>
-</div>
-
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- AOS Animation Library -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
 <script>
-// Initialize AOS Animations
-AOS.init({
-    duration: 800,
-    once: true,
-    offset: 100
-});
-
-// Navbar scroll effect
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+  // Typing animation
+  const text = "Web Developer | Engineering Student | Tech Enthusiast";
+  let i = 0;
+  function typeOneLine() {
+    if(i < text.length) {
+      document.getElementById("typing").textContent += text.charAt(i);
+      i++;
+      setTimeout(typeOneLine, 100);
     }
-});
+  }
+  typeOneLine();
 
-// Scroll to top button
-const scrollToTopBtn = document.getElementById('scrollToTop');
-
-window.addEventListener('scroll', function() {
-    if (window.scrollY > 300) {
-        scrollToTopBtn.classList.add('show');
-    } else {
-        scrollToTopBtn.classList.remove('show');
+  // Matrix icon animation
+  const canvas = document.getElementById('matrixCanvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const icons = ["💻","📂","☁️","⚡","🖥️","🔧","📝","🛠️","🌐","📊"];
+  const fontSize = 24;
+  const columns = canvas.width / fontSize;
+  const drops = [];
+  for(let x=0;x<columns;x++) drops[x] = Math.random()*canvas.height/fontSize;
+  function drawIcons() {
+    ctx.fillStyle = "rgba(2,6,23,0.15)";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.font = fontSize + "px monospace";
+    for(let i=0;i<drops.length;i++){
+      const icon = icons[Math.floor(Math.random()*icons.length)];
+      ctx.fillStyle = "#38bdf8";
+      ctx.fillText(icon, i*fontSize, drops[i]*fontSize);
+      if(drops[i]*fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+      drops[i] += 0.5 + Math.random()*0.5;
     }
-});
-
-scrollToTopBtn.addEventListener('click', function() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
-// Smooth scroll for nav links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-            // Close mobile menu if open
-            const navCollapse = document.querySelector('.navbar-collapse');
-            if (navCollapse.classList.contains('show')) {
-                navCollapse.classList.remove('show');
-            }
-        }
-    });
-});
-
-// Project Filter Functionality
-const filterButtons = document.querySelectorAll('.filter-btn');
-const projectItems = document.querySelectorAll('.project-item');
-
-filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Remove active class from all buttons
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        // Add active class to clicked button
-        button.classList.add('active');
-        
-        const filterValue = button.getAttribute('data-filter');
-        
-        projectItems.forEach(item => {
-            if (filterValue === 'all') {
-                item.style.display = 'block';
-                setTimeout(() => {
-                    item.style.opacity = '1';
-                    item.style.transform = 'scale(1)';
-                }, 10);
-            } else if (item.classList.contains(filterValue)) {
-                item.style.display = 'block';
-                setTimeout(() => {
-                    item.style.opacity = '1';
-                    item.style.transform = 'scale(1)';
-                }, 10);
-            } else {
-                item.style.opacity = '0';
-                item.style.transform = 'scale(0.8)';
-                setTimeout(() => {
-                    item.style.display = 'none';
-                }, 300);
-            }
-        });
-    });
-});
-
-console.log("Portfolio Loaded Successfully ✨");
+  }
+  setInterval(drawIcons, 50);
+  window.addEventListener('resize', ()=>{
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
 </script>
-
 </body>
-</html>
+</html> 

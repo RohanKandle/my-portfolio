@@ -55,5 +55,5 @@ Then open `index.html` in your browser.
 
 * 📧 Email: rohankandale1213@gmail.com
 * 💼 LinkedIn: linkedin.com/in/rohan-kandle-31a4492b1
-* 🌐 Portfolio:
+* 🌐 Portfolio: https://github.com/RohanKandle/my-portfolio.git
 
